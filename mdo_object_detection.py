@@ -209,7 +209,8 @@ def draw_boxes(image, boxes, class_names, scores, max_boxes=10, min_score=MIN_SC
 Load a public image from Open Images v4, save locally, and display.
 """
 
-image_url = "https://farm1.staticflickr.com/4032/4653948754_c0d768086b_o.jpg"  #@param
+image_url = "file://localhost/D:/GitHub-Mark-MDO47/tf2.x_expts/IMG0A824.jpg"
+# image_url = "https://farm1.staticflickr.com/4032/4653948754_c0d768086b_o.jpg"  #@param
 downloaded_image_path = download_and_resize_image(image_url, 1280, 856, True, filename="img_detect_%03d.jpg" % 0)
 
 """Pick an object detection module and apply on the downloaded image. Modules:
@@ -246,6 +247,10 @@ def run_detector(detector, path):
       result["detection_class_entities"], result["detection_scores"])
 
   display_image(image_with_boxes)
+  # img_jpg = tf.image.convert_image_dtype(image_with_boxes, tf.uint8, saturate=True)
+  # img_jpg = tf.io.encode_jpeg(img_jpg)
+  img_jpg = Image.fromarray(image_with_boxes)
+  img_jpg.save(path, format="JPEG", quality=90)
   return result
 
 def show_result(result, min_score=MIN_SCORE, fname="UNKNOWN"):
@@ -259,6 +264,7 @@ def show_result(result, min_score=MIN_SCORE, fname="UNKNOWN"):
 result = run_detector(detector, downloaded_image_path)
 show_result(result, fname=downloaded_image_path)
 
+exit()
 """### More images
 Perform inference on some additional images with time tracking.
 """
