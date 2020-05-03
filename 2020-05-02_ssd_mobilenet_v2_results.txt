@@ -1,0 +1,195 @@
+2020-05-02 19:38:48.010747: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_101.dll
+2020-05-02 19:38:50.229891: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX AVX2
+2020-05-02 19:38:50.233554: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library nvcuda.dll
+2020-05-02 19:38:50.311529: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce GTX 1080 computeCapability: 6.1
+coreClock: 1.7335GHz coreCount: 20 deviceMemorySize: 8.00GiB deviceMemoryBandwidth: 298.32GiB/s
+2020-05-02 19:38:50.313830: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_101.dll
+2020-05-02 19:38:50.318018: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_10.dll
+2020-05-02 19:38:50.321878: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_10.dll
+2020-05-02 19:38:50.323355: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_10.dll
+2020-05-02 19:38:50.327691: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_10.dll
+2020-05-02 19:38:50.330244: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_10.dll
+2020-05-02 19:38:50.338509: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-05-02 19:38:50.339511: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0
+2020-05-02 19:38:50.969583: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1096] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-05-02 19:38:50.969986: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102]      0 
+2020-05-02 19:38:50.970225: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] 0:   N 
+2020-05-02 19:38:50.971026: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1241] Created TensorFlow device (/device:GPU:0 with 6349 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080, pci bus id: 0000:01:00.0, compute capability: 6.1)
+2020-05-02 19:39:17.937085: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce GTX 1080 computeCapability: 6.1
+coreClock: 1.7335GHz coreCount: 20 deviceMemorySize: 8.00GiB deviceMemoryBandwidth: 298.32GiB/s
+2020-05-02 19:39:17.937829: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_101.dll
+2020-05-02 19:39:17.938200: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_10.dll
+2020-05-02 19:39:17.938565: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_10.dll
+2020-05-02 19:39:17.938929: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_10.dll
+2020-05-02 19:39:17.939294: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_10.dll
+2020-05-02 19:39:17.939666: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_10.dll
+2020-05-02 19:39:17.940037: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-05-02 19:39:17.940710: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0
+2020-05-02 19:39:17.941564: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce GTX 1080 computeCapability: 6.1
+coreClock: 1.7335GHz coreCount: 20 deviceMemorySize: 8.00GiB deviceMemoryBandwidth: 298.32GiB/s
+2020-05-02 19:39:17.942327: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_101.dll
+2020-05-02 19:39:17.942700: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_10.dll
+2020-05-02 19:39:17.943069: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_10.dll
+2020-05-02 19:39:17.943434: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_10.dll
+2020-05-02 19:39:17.943802: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_10.dll
+2020-05-02 19:39:17.944174: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_10.dll
+2020-05-02 19:39:17.944548: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-05-02 19:39:17.945334: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0
+2020-05-02 19:39:17.945678: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1096] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-05-02 19:39:17.946060: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102]      0 
+2020-05-02 19:39:17.946298: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] 0:   N 
+2020-05-02 19:39:17.946989: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1241] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 6349 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080, pci bus id: 0000:01:00.0, compute capability: 6.1)
+2020-05-02 19:39:43.279472: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-05-02 19:39:44.245925: W tensorflow/stream_executor/gpu/redzone_allocator.cc:312] Internal: Invoking GPU asm compilation is supported on Cuda non-Windows platforms only
+Relying on driver to perform ptx compilation. This message will be only logged once.
+2020-05-02 19:39:44.255808: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_10.dll
+2.1.0
+The following GPU devices are available: /device:GPU:0
+Image downloaded to img_detect_000.jpg.
+Found 100 objects.
+Inference time:  8.696704387664795
+Font not found, using default font.
+Results for img_detect_000.jpg
+0 0.52015704 b'Chair'
+1 0.49026737 b'Chair'
+2 0.42341387 b'Chair'
+3 0.3663689 b'Table'
+4 0.3052481 b'Chair'
+5 0.29107442 b'Chair'
+6 0.21583965 b'Chair'
+7 0.21554007 b'Kitchen & dining room table'
+8 0.1885939 b'Tree'
+9 0.1854404 b'Chair'
+10 0.17874411 b'Window'
+11 0.17723429 b'House'
+12 0.17018457 b'Chair'
+13 0.16838647 b'Footwear'
+14 0.16681865 b'Footwear'
+15 0.16597717 b'House'
+16 0.16122907 b'Window'
+17 0.1600273 b'Chair'
+18 0.15452176 b'Window'
+19 0.15243027 b'House'
+20 0.15233414 b'Chair'
+21 0.15020694 b'Chair'
+22 0.14798899 b'Chair'
+23 0.14460461 b'Window'
+24 0.14387885 b'House'
+25 0.14312272 b'House'
+26 0.14273863 b'Chair'
+27 0.14236619 b'Window'
+28 0.14136177 b'Chair'
+29 0.13985147 b'Plant'
+30 0.13931018 b'Tree'
+31 0.1387964 b'Chair'
+32 0.1382136 b'Plant'
+33 0.13448213 b'Tree'
+34 0.13409175 b'Window'
+35 0.12895334 b'Window'
+36 0.12475678 b'Window'
+37 0.124269426 b'Window'
+38 0.122535445 b'Tree'
+39 0.1209707 b'Window'
+40 0.120436214 b'House'
+41 0.11977982 b'Tree'
+42 0.11762478 b'Window'
+43 0.11761932 b'Window'
+44 0.11670061 b'Tree'
+45 0.11622906 b'Tree'
+46 0.11456496 b'Footwear'
+47 0.11419498 b'Window'
+48 0.11306279 b'Window'
+49 0.112297 b'Window'
+50 0.111837454 b'Window'
+51 0.110696614 b'Chair'
+52 0.10965309 b'Window'
+53 0.1093507 b'Window'
+54 0.10909641 b'Tree'
+55 0.108927324 b'Chair'
+56 0.10677699 b'Plant'
+57 0.10671591 b'Tree'
+58 0.1063578 b'House'
+59 0.106335975 b'House'
+60 0.10594688 b'Window'
+61 0.10534761 b'Chair'
+62 0.10472013 b'Tree'
+63 0.10453469 b'Window'
+64 0.10342569 b'Chair'
+65 0.1032941 b'Window'
+66 0.10296212 b'Footwear'
+67 0.10251677 b'Tree'
+68 0.10219115 b'Window'
+69 0.10206833 b'House'
+70 0.101430625 b'Tree'
+71 0.101349056 b'Window'
+72 0.10128432 b'Footwear'
+73 0.1002757 b'Window'
+Image downloaded to img_detect_001.jpg.
+Found 100 objects.
+Inference time:  0.16652703285217285
+Font not found, using default font.
+Results for img_detect_001.jpg
+0 0.903319 b'Beetle'
+1 0.81101346 b'Beetle'
+2 0.8081394 b'Beetle'
+3 0.7281065 b'Beetle'
+4 0.7162817 b'Beetle'
+5 0.69651085 b'Beetle'
+6 0.6740736 b'Beetle'
+7 0.39919454 b'Insect'
+8 0.39594945 b'Insect'
+9 0.34578657 b'Insect'
+10 0.33133724 b'Insect'
+11 0.29408514 b'Insect'
+12 0.25905582 b'Insect'
+13 0.25874233 b'Insect'
+14 0.2470458 b'Beetle'
+15 0.24266851 b'Beetle'
+16 0.16455616 b'Beetle'
+17 0.14731528 b'Spider'
+18 0.13561438 b'Spider'
+19 0.122563034 b'Spider'
+20 0.10738586 b'Flower'
+21 0.10717529 b'Flower'
+22 0.10425573 b'Flower'
+23 0.10405039 b'Plant'
+24 0.10098595 b'Flower'
+25 0.1003141 b'Beetle'
+Image downloaded to img_detect_002.jpg.
+Found 100 objects.
+Inference time:  0.16453123092651367
+Font not found, using default font.
+Results for img_detect_002.jpg
+0 0.915089 b'Mobile phone'
+1 0.8178337 b'Mobile phone'
+2 0.21266793 b'Watch'
+3 0.11814394 b'Microphone'
+4 0.10175028 b'Mobile phone'
+Image downloaded to img_detect_003.jpg.
+Found 100 objects.
+Inference time:  0.15957283973693848
+Font not found, using default font.
+Results for img_detect_003.jpg
+0 0.38031727 b'Bird'
+1 0.23105839 b'Bird'
+2 0.221666 b'Bird'
+3 0.20905168 b'Bird'
+4 0.17649959 b'Plant'
+5 0.171242 b'Bird'
+6 0.14889035 b'Bird'
+7 0.14184922 b'Plant'
+8 0.13692866 b'Plant'
+9 0.12884285 b'Bird'
+10 0.12685017 b'Bird'
+11 0.12506254 b'Plant'
+12 0.11813109 b'Plant'
+13 0.11217031 b'Plant'
+14 0.10798412 b'Plant'
+15 0.10728 b'Bird'
+16 0.10532101 b'Flower'
+17 0.10321893 b'Plant'
+18 0.10308816 b'Plant'
+19 0.100762576 b'Plant'
