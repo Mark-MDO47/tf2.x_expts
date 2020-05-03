@@ -1,0 +1,139 @@
+2020-05-02 17:23:28.383019: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_101.dll
+2020-05-02 17:23:30.600359: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX AVX2
+2020-05-02 17:23:30.603409: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library nvcuda.dll
+2020-05-02 17:23:30.680633: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce GTX 1080 computeCapability: 6.1
+coreClock: 1.7335GHz coreCount: 20 deviceMemorySize: 8.00GiB deviceMemoryBandwidth: 298.32GiB/s
+2020-05-02 17:23:30.681369: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_101.dll
+2020-05-02 17:23:30.685463: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_10.dll
+2020-05-02 17:23:30.689263: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_10.dll
+2020-05-02 17:23:30.690814: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_10.dll
+2020-05-02 17:23:30.695173: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_10.dll
+2020-05-02 17:23:30.697675: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_10.dll
+2020-05-02 17:23:30.705824: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-05-02 17:23:30.706816: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0
+2020-05-02 17:23:31.338490: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1096] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-05-02 17:23:31.338888: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102]      0 
+2020-05-02 17:23:31.339125: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] 0:   N 
+2020-05-02 17:23:31.339918: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1241] Created TensorFlow device (/device:GPU:0 with 6349 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080, pci bus id: 0000:01:00.0, compute capability: 6.1)
+2020-05-02 17:24:55.531438: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce GTX 1080 computeCapability: 6.1
+coreClock: 1.7335GHz coreCount: 20 deviceMemorySize: 8.00GiB deviceMemoryBandwidth: 298.32GiB/s
+2020-05-02 17:24:55.532186: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_101.dll
+2020-05-02 17:24:55.532563: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_10.dll
+2020-05-02 17:24:55.532934: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_10.dll
+2020-05-02 17:24:55.533308: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_10.dll
+2020-05-02 17:24:55.533678: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_10.dll
+2020-05-02 17:24:55.534053: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_10.dll
+2020-05-02 17:24:55.534427: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-05-02 17:24:55.535366: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0
+2020-05-02 17:24:55.536241: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1555] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: GeForce GTX 1080 computeCapability: 6.1
+coreClock: 1.7335GHz coreCount: 20 deviceMemorySize: 8.00GiB deviceMemoryBandwidth: 298.32GiB/s
+2020-05-02 17:24:55.537012: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_101.dll
+2020-05-02 17:24:55.537385: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_10.dll
+2020-05-02 17:24:55.537754: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cufft64_10.dll
+2020-05-02 17:24:55.538122: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library curand64_10.dll
+2020-05-02 17:24:55.538491: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusolver64_10.dll
+2020-05-02 17:24:55.538865: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cusparse64_10.dll
+2020-05-02 17:24:55.539239: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-05-02 17:24:55.540150: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1697] Adding visible gpu devices: 0
+2020-05-02 17:24:55.540494: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1096] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-05-02 17:24:55.540878: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1102]      0 
+2020-05-02 17:24:55.541119: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] 0:   N 
+2020-05-02 17:24:55.541814: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1241] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 6349 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080, pci bus id: 0000:01:00.0, compute capability: 6.1)
+2020-05-02 17:26:42.707028: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_10.dll
+2020-05-02 17:26:43.221873: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-05-02 17:26:44.103029: W tensorflow/stream_executor/gpu/redzone_allocator.cc:312] Internal: Invoking GPU asm compilation is supported on Cuda non-Windows platforms only
+Relying on driver to perform ptx compilation. This message will be only logged once.
+2.1.0
+The following GPU devices are available: /device:GPU:0
+Image downloaded to img_detect_000.jpg.
+Found 100 objects.
+Inference time:  38.25776433944702
+Font not found, using default font.
+Results for img_detect_000.jpg
+0 0.88854975 b'Chair'
+1 0.8861001 b'Chair'
+2 0.8755451 b'Chair'
+3 0.8424619 b'Chair'
+4 0.7166779 b'Kitchen & dining room table'
+5 0.64851743 b'Tree'
+6 0.5749411 b'House'
+7 0.52226394 b'Chair'
+8 0.47699162 b'Window'
+9 0.43943167 b'Tree'
+10 0.38682404 b'Window'
+11 0.37312305 b'Table'
+12 0.35688233 b'Plant'
+13 0.31618428 b'Plant'
+14 0.27308014 b'Chair'
+15 0.22314371 b'Window'
+16 0.21487275 b'Table'
+17 0.21486354 b'Window'
+18 0.2119431 b'Chair'
+19 0.20985153 b'House'
+20 0.20975405 b'Bench'
+21 0.20842268 b'Chair'
+22 0.19629753 b'Window'
+23 0.18867595 b'Plant'
+24 0.16795376 b'Chair'
+25 0.16481556 b'Chair'
+26 0.16179505 b'House'
+27 0.15583245 b'Tree'
+28 0.15500462 b'Tree'
+29 0.1481588 b'Tree'
+30 0.1457387 b'Chair'
+31 0.1434469 b'Chair'
+32 0.143213 b'Plant'
+33 0.14209726 b'Table'
+34 0.13301389 b'Tree'
+35 0.1221682 b'Table'
+36 0.11567931 b'Chair'
+Image downloaded to img_detect_001.jpg.
+Found 100 objects.
+Inference time:  1.9138848781585693
+Font not found, using default font.
+Results for img_detect_001.jpg
+0 0.97785974 b'Beetle'
+1 0.96267295 b'Beetle'
+2 0.9496283 b'Beetle'
+3 0.94943213 b'Beetle'
+4 0.94020134 b'Beetle'
+5 0.8503005 b'Beetle'
+6 0.8173044 b'Beetle'
+7 0.5732792 b'Insect'
+8 0.45883116 b'Insect'
+9 0.3505841 b'Insect'
+10 0.1745095 b'Tick'
+Image downloaded to img_detect_002.jpg.
+Found 100 objects.
+Inference time:  1.173863172531128
+Font not found, using default font.
+Results for img_detect_002.jpg
+0 0.99881625 b'Mobile phone'
+1 0.9979395 b'Mobile phone'
+2 0.29684147 b'Weapon'
+3 0.2459348 b'Tool'
+4 0.1883617 b'Tool'
+5 0.18705413 b'Knife'
+6 0.16778633 b'Wrench'
+7 0.10907251 b'Ratchet'
+8 0.10235008 b'Mobile phone'
+Image downloaded to img_detect_003.jpg.
+Found 100 objects.
+Inference time:  1.1499271392822266
+Font not found, using default font.
+Results for img_detect_003.jpg
+0 0.97854495 b'Bird'
+1 0.8780808 b'Bird'
+2 0.8361893 b'Bird'
+3 0.750879 b'Bird'
+4 0.5787397 b'Duck'
+5 0.49697512 b'Woodpecker'
+6 0.16719434 b'Plant'
+7 0.1662867 b'Tree'
+8 0.14751314 b'Animal'
+9 0.13507493 b'Plant'
+10 0.13296476 b'Plant'
+11 0.11149024 b'Bird'

@@ -46,6 +46,8 @@ Licensed under the Apache License, Version 2.0 (the "License");
 # In reality, any changes I make are probably not very good and not of interest
 # to anyone other than myself.
 
+MIN_SCORE=0.1
+
 """# Object detection
 
 <table class="tfo-notebook-buttons" align="left">
@@ -112,8 +114,9 @@ def display_image(image):
 
 
 def download_and_resize_image(url, new_width=256, new_height=256,
-                              display=False):
-  _, filename = tempfile.mkstemp(suffix=".jpg")
+                              display=False, filename="UNKNOWN"):
+  if "UNKNOWN" == filename:
+    _, filename = tempfile.mkstemp(suffix=".jpg")
   response = urlopen(url)
   image_data = response.read()
   image_data = BytesIO(image_data)
@@ -171,7 +174,7 @@ def draw_bounding_box_on_image(image,
     text_bottom -= text_height - 2 * margin
 
 
-def draw_boxes(image, boxes, class_names, scores, max_boxes=10, min_score=0.1):
+def draw_boxes(image, boxes, class_names, scores, max_boxes=10, min_score=MIN_SCORE):
   """Overlay labeled boxes on an image with formatted scores and label names."""
   colors = list(ImageColor.colormap.values())
 
@@ -207,7 +210,7 @@ Load a public image from Open Images v4, save locally, and display.
 """
 
 image_url = "https://farm1.staticflickr.com/4032/4653948754_c0d768086b_o.jpg"  #@param
-downloaded_image_path = download_and_resize_image(image_url, 1280, 856, True)
+downloaded_image_path = download_and_resize_image(image_url, 1280, 856, True, filename="img_detect_%03d.jpg" % 0)
 
 """Pick an object detection module and apply on the downloaded image. Modules:
 * **FasterRCNN+InceptionResNet V2**: high accuracy,
@@ -236,16 +239,24 @@ def run_detector(detector, path):
 
   print("Found %d objects." % len(result["detection_scores"]))
   print("Inference time: ", end_time-start_time)
-  # for idx,rslt in enumerate(result["detection_scores"]):
-  #   print("%s %s %s" % (idx, rslt, result["detection_class_entities"][idx]))
 
   image_with_boxes = draw_boxes(
       img.numpy(), result["detection_boxes"],
       result["detection_class_entities"], result["detection_scores"])
 
   display_image(image_with_boxes)
+  return result
 
-run_detector(detector, downloaded_image_path)
+def show_result(result, min_score=MIN_SCORE, fname="UNKNOWN"):
+  print("Results for %s" % fname) 
+  for idx in range(len((result["detection_scores"]))):
+    if result["detection_scores"][idx] >= min_score:
+      print("%s %s %s" % (idx, result["detection_scores"][idx], result["detection_class_entities"][idx]))
+    else:
+      break
+
+result = run_detector(detector, downloaded_image_path)
+show_result(result, fname=downloaded_image_path)
 
 """### More images
 Perform inference on some additional images with time tracking.
@@ -255,9 +266,7 @@ image_urls = ["https://farm7.staticflickr.com/8092/8592917784_4759d3088b_o.jpg",
               "https://farm6.staticflickr.com/2598/4138342721_06f6e177f3_o.jpg",
               "https://c4.staticflickr.com/9/8322/8053836633_6dc507f090_o.jpg"]
 
-for image_url in image_urls:
-  start_time = time.time()
-  image_path = download_and_resize_image(image_url, 640, 480)
-  run_detector(detector, image_path)
-  end_time = time.time()
-  print("Inference time:",start_time-end_time)
+for idx,image_url in enumerate(image_urls):
+  downloaded_image_path = download_and_resize_image(image_url, 640, 480, filename="img_detect_%03d.jpg" % (1+idx))
+  result = run_detector(detector, downloaded_image_path)
+  show_result(result, fname=downloaded_image_path)
