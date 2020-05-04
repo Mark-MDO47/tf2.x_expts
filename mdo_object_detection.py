@@ -246,18 +246,28 @@ def show_result(result, min_score=MIN_SCORE, fname="UNKNOWN"):
         else:
             break
 
-
+#
+# Original location of Tensorflow Hub models used
+# https://tfhub.dev/google/openimages_v4/ssd/mobilenet_v2/1
+# https://tfhub.dev/google/faster_rcnn/openimages_v4/inception_resnet_v2/1
+#
 if __name__ == "__main__":
     my_parser = argparse.ArgumentParser(prog='mdo_object_detection',
         formatter_class=argparse.RawTextHelpFormatter,
         description="makes JPG images with bounding boxes from directory of images",
         epilog="""Example:
-python mdo_object_detection.py source_directory_for_images
+python mdo_object_detection.py [-incept] source_directory_for_images
 
+Processes images in source_directory_for_images; outputs *_box.* with bounding boxes
+Default Detector: mobilenet_v2. if -incept, inception_resnet_v2
 NOTE: only processes JPG (*.jpg, *.jpeg, *.JPG, *.JPEG) or PNG (*.png, *.PNG)
 """,
         usage='%(prog)s source_directory_for_images')
     my_parser.add_argument('sourcedirectory',type=str,help='path to directory with images to process')
+    my_parser.add_argument('-incept',
+                           action='store_const',
+                           default="D:/2020-04-26_TF_models/TensorFlowHub_models/mobilenet_v2",
+                           const="D:/2020-04-26_TF_models/TensorFlowHub_models/inception_resnet_v2")
     args = my_parser.parse_args()
 
     myFileExts = ["jpg", "jpeg", "JPG", "JPEG", "png", "PNG"]
@@ -289,7 +299,8 @@ NOTE: only processes JPG (*.jpg, *.jpeg, *.JPG, *.JPEG) or PNG (*.png, *.PNG)
     * **ssd+mobilenet V2**: small and fast.
     """
 
-    module_handle = "https://tfhub.dev/google/openimages_v4/ssd/mobilenet_v2/1"
+    module_handle = args.incept # either default mobilenet_v2 or inception_resnet_v2
+    # module_handle = "https://tfhub.dev/google/openimages_v4/ssd/mobilenet_v2/1"
     # module_handle = "https://tfhub.dev/google/faster_rcnn/openimages_v4/inception_resnet_v2/1"
     # @param ["https://tfhub.dev/google/openimages_v4/ssd/mobilenet_v2/1", "https://tfhub.dev/google/faster_rcnn/openimages_v4/inception_resnet_v2/1"]
 
