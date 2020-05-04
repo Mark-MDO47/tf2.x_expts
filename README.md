@@ -29,4 +29,5 @@ In order to have a local copy of the Tensorflow Hub model(s) so I could run the 
   - drwxr-xr-x 1 mdo 197609         0 May  3 21:35 1/
   - drwxr-xr-x 1 mdo 197609         0 May  3 21:37 assets/
   - drwxr-xr-x 1 mdo 197609         0 May  3 21:37 variables/
+
 See this: https://stackoverflow.com/questions/50322001/how-to-save-load-a-tensorflow-hub-module-to-from-a-custom-path
