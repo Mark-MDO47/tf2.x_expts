@@ -26,7 +26,6 @@ In order to have a local copy of the Tensorflow Hub model(s) so I could run the 
   - total 280429
   - -rw-r--r-- 1 mdo 197609 287156985 Sep  7  2018 saved_model.pb
   - -rw-r--r-- 1 mdo 197609         2 Sep  7  2018 tfhub_module.pb
-  - drwxr-xr-x 1 mdo 197609         0 May  3 21:35 1/
   - drwxr-xr-x 1 mdo 197609         0 May  3 21:37 assets/
   - drwxr-xr-x 1 mdo 197609         0 May  3 21:37 variables/
 
