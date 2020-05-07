@@ -13,7 +13,7 @@ Because the original project used the "Apache License, Version 2.0" I am continu
 - You may obtain a copy of the License at
   - http://www.apache.org/licenses/LICENSE-2.0
 
-For my own sanity I am keeping the original file object_detection.ipynb and working on my own version mdo_object_detection.ipynb. I will develop on Google Colab but plan to implement on the amazing Nvidia Jetson Nano (I still have the previous A02 hardware).
+For my own sanity I am keeping the original file object_detection.ipynb and working on my own version mdo_object_detection.py. I will develop on Google Colab then my Windows 10 PC but plan to implement on the amazing Nvidia Jetson Nano (I still have the previous A02 hardware).
 - https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-nano/
 
 In order to have a local copy of the Tensorflow Hub model(s) so I could run the camera without an internet connection:
