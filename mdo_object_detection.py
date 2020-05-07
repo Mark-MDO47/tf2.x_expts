@@ -339,5 +339,5 @@ if __name__ == "__main__":
         boxname = boxname[:boxname.rfind(".")]+"_box"+boxname[boxname.rfind("."):]
         downloaded_image_path = download_and_resize_image(image_url, 1280, 856, True, filename=boxname)
         result = run_detector(detector, downloaded_image_path)
-        # show_result(result, fname=downloaded_image_path)
+        show_result(result, fname=downloaded_image_path)
 
