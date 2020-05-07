@@ -246,47 +246,84 @@ def show_result(result, min_score=MIN_SCORE, fname="UNKNOWN"):
         else:
             break
 
-#
-# Original location of Tensorflow Hub models used
-# https://tfhub.dev/google/openimages_v4/ssd/mobilenet_v2/1
-# https://tfhub.dev/google/faster_rcnn/openimages_v4/inception_resnet_v2/1
-#
-if __name__ == "__main__":
-    my_parser = argparse.ArgumentParser(prog='mdo_object_detection',
+def getArgs():
+    FILEEXT = ["jpg", "jpeg", "JPG", "JPEG", "png", "PNG"]
+    PNGEXT = ["png", "PNG"]
+    JPGEXT = ["jpg", "jpeg", "JPG", "JPEG"]
+    MODELS=['ssd', 'mobile', 'rcnn', 'incept', 'resnet']
+    MOBILE=['ssd', 'mobile']
+    INCEPT=['rcnn', 'incept', 'resnet']
+    MODELDEFAULT='ssd'
+
+    jpgOrPng = "JPG ("
+    for ext in JPGEXT:
+        jpgOrPng += "*." + ext + ","
+    jpgOrPng = jpgOrPng[:-1] + ')'
+    jpgOrPng += " or PNG ("
+    for ext in PNGEXT:
+        jpgOrPng += "*." + ext + ","
+    jpgOrPng = jpgOrPng[:-1] + ')'
+
+    epiloghelp="""Example:
+python mdo_object_detection.py {[-d --detector] <<<detector>>>} imagedirectory
+
+Processes images in imagedirectory; outputs *_box.* with bounding boxes
+NOTE: only processes %s
+""" % jpgOrPng
+
+    detectorhelp = """
+ssd or mobile = (default) https://tfhub.dev/google/ssd/mobilenet_v2/1 (small and fast)
+rcnn or incept or resnet = https://tfhub.dev/google/faster_rcnn/openimages_v4/inception_resnet_v2/1 (high accuracy)
+"""
+
+    my_parser = argparse.ArgumentParser(prog='mdo_object_detection', epilog=epiloghelp,
         formatter_class=argparse.RawTextHelpFormatter,
         description="makes JPG images with bounding boxes from directory of images",
-        epilog="""Example:
-python mdo_object_detection.py [-incept] source_directory_for_images
+        usage='%(prog)s {[-d --detector] <<<detector>>>} imagedirectory')
+    my_parser.add_argument('imagedirectory',type=str,help='path to directory with images to process')
 
-Processes images in source_directory_for_images; outputs *_box.* with bounding boxes
-Default Detector: mobilenet_v2. if -incept, inception_resnet_v2
-NOTE: only processes JPG (*.jpg, *.jpeg, *.JPG, *.JPEG) or PNG (*.png, *.PNG)
-""",
-        usage='%(prog)s source_directory_for_images')
-    my_parser.add_argument('sourcedirectory',type=str,help='path to directory with images to process')
-    my_parser.add_argument('-incept',
-                           action='store_const',
-                           default="D:/2020-04-26_TF_models/TensorFlowHub_models/mobilenet_v2",
-                           const="D:/2020-04-26_TF_models/TensorFlowHub_models/inception_resnet_v2")
+    my_parser.add_argument('-d', '--detector', nargs=1, help=detectorhelp,
+                           choices=('ssd', 'mobile', 'rcnn', 'incept', 'resnet'),
+                           default = MODELDEFAULT)
+
     args = my_parser.parse_args()
 
-    myFileExts = ["jpg", "jpeg", "JPG", "JPEG", "png", "PNG"]
-    if not os.path.isdir(args.sourcedirectory):
-        sys.stderr.write("\nERROR: %s is not a source directory of files\n" % args.sourcedirectory)
+    #
+    # check that the source directory exists and has image files
+    #
+    if not os.path.isdir(args.imagedirectory):
+        sys.stderr.write("\nERROR: %s is not a source directory of files\n" % args.imagedirectory)
         exit(1)
-    theFiles = os.listdir(args.sourcedirectory)
+    theFiles = os.listdir(args.imagedirectory)
 
     # eliminate files we don't process
     idxF = 0
     while (len(theFiles) > 0) and (idxF < len(theFiles)):
         fnFrag = theFiles[idxF].split(".")
-        if fnFrag[-1] not in myFileExts:
+        if fnFrag[-1] not in FILEEXT:
             del theFiles[idxF]
         else:
             idxF += 1
     if len(theFiles) <= 0:
-        print("\nERROR: directory %s does not contain any JPG (*.jpg, *.jpeg, *.JPG, *.JPEG) or PNG (*.png, *.PNG) files\n")
+        print("\nERROR: directory %s does not contain any %s files\n" % (args.imagedirectory, jpgOrPng))
         exit(1)
+    thePath = os.path.abspath(args.imagedirectory).replace("\\","/") + "/"
+
+    #
+    # check that the chosen detector is one we know about
+    #
+    # @param ["https://tfhub.dev/google/openimages_v4/ssd/mobilenet_v2/1", "https://tfhub.dev/google/faster_rcnn/openimages_v4/inception_resnet_v2/1"]
+    theDetector = "UNKNOWN"
+    if args.detector[-1] in MOBILE:
+        theDetector = "D:/2020-04-26_TF_models/TensorFlowHub_models/mobilenet_v2"
+    elif args.detector[-1] in INCEPT:
+        theDetector = "D:/2020-04-26_TF_models/TensorFlowHub_models/inception_resnet_v2"
+
+    return thePath, theFiles, theDetector
+
+if __name__ == "__main__":
+
+    thePath, theFiles, theDetector = getArgs()
 
     # Print Tensorflow version
     print("Tensorflow version %s" % tf.__version__)
@@ -294,38 +331,13 @@ NOTE: only processes JPG (*.jpg, *.jpeg, *.JPG, *.JPEG) or PNG (*.png, *.PNG)
     # Check available GPU devices.
     print("The following GPU devices are available: %s" % tf.test.gpu_device_name())
 
-    """Pick an object detection module and apply on the downloaded image. Modules:
-    * **FasterRCNN+InceptionResNet V2**: high accuracy,
-    * **ssd+mobilenet V2**: small and fast.
-    """
+    detector = hub.load(theDetector).signatures['default']
 
-    module_handle = args.incept # either default mobilenet_v2 or inception_resnet_v2
-    # module_handle = "https://tfhub.dev/google/openimages_v4/ssd/mobilenet_v2/1"
-    # module_handle = "https://tfhub.dev/google/faster_rcnn/openimages_v4/inception_resnet_v2/1"
-    # @param ["https://tfhub.dev/google/openimages_v4/ssd/mobilenet_v2/1", "https://tfhub.dev/google/faster_rcnn/openimages_v4/inception_resnet_v2/1"]
-
-    detector = hub.load(module_handle).signatures['default']
-
-    thePath = os.path.abspath(args.sourcedirectory).replace("\\","/") + "/"
     for fname in theFiles:
         image_url = "file://localhost/" + thePath + fname
-        # image_url = "file://localhost/D:/GitHub-Mark-MDO47/tf2.x_expts/IMG0A824.jpg"
-        # image_url = "https://farm1.staticflickr.com/4032/4653948754_c0d768086b_o.jpg"  #@param
         boxname = thePath + fname
         boxname = boxname[:boxname.rfind(".")]+"_box"+boxname[boxname.rfind("."):]
         downloaded_image_path = download_and_resize_image(image_url, 1280, 856, True, filename=boxname)
         result = run_detector(detector, downloaded_image_path)
-        show_result(result, fname=downloaded_image_path)
+        # show_result(result, fname=downloaded_image_path)
 
-### """### More images
-### Perform inference on some additional images with time tracking.
-### """
-###
-### image_urls = ["https://farm7.staticflickr.com/8092/8592917784_4759d3088b_o.jpg",
-###               "https://farm6.staticflickr.com/2598/4138342721_06f6e177f3_o.jpg",
-###               "https://c4.staticflickr.com/9/8322/8053836633_6dc507f090_o.jpg"]
-###
-### for idx,image_url in enumerate(image_urls):
-###   downloaded_image_path = download_and_resize_image(image_url, 640, 480, filename="img_detect_%03d.jpg" % (1+idx))
-###   result = run_detector(detector, downloaded_image_path)
-###   show_result(result, fname=downloaded_image_path)
